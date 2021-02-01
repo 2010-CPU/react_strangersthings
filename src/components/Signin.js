@@ -33,6 +33,7 @@ const Signin = ({type, setToken, setUser}) => {
     const token = data?.token;
     if (token) {
     setToken(token);
+    localStorage.setItem('token', token)
       const response = await fetch(`https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/users/me`, {
       method: "GET",
       headers: {
@@ -44,6 +45,7 @@ const Signin = ({type, setToken, setUser}) => {
     setUser(data)
     setUsername('');
     setPassword('');
+
   }
   
   // history.push('/');

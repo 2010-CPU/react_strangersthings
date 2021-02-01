@@ -14,10 +14,7 @@ const GetPosts = ({posts, setPosts}) => {
         const response = await fetch('https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/posts')
         const data = await response.json();
         console.log(data.data.posts);
-
-        return setPosts(data.data.posts)
-      
-
+        setPosts(data.data.posts)
     }
       return <>
             {
