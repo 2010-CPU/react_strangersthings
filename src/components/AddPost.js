@@ -3,17 +3,17 @@ import {Link} from 'react-router-dom';
 import {useHistory} from 'react-router-dom'; 
 
 
-const AddPost = ({token, posts, user, setPosts}) => {
+const AddPost = ({token, posts, setPosts}) => {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [price, setPrice] = useState([]);
     const [location, setLocation] = useState([]);
     const [isAuthor, setIsAuthor] = useState(false)
 
-    useEffect (() => {
-        addPost();
-        console.log('posts:', posts)
-    }, []);
+    // useEffect (() => {
+    //     addPost();
+    //     console.log('posts:', posts)
+    // }, []);
 
     const addPost = async () => {
         const response = await fetch(`https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/posts`, {
@@ -24,11 +24,11 @@ const AddPost = ({token, posts, user, setPosts}) => {
             },
             body: JSON.stringify({
                 post: {
-                  title,
-                  description,
-                  price,
-                  location,
-                  isAuthor,
+                  title: title,
+                  description: description,
+                  price: price,
+                  location: location,
+                  isAuthor: isAuthor,
                 }
               })
           })
@@ -40,7 +40,7 @@ const AddPost = ({token, posts, user, setPosts}) => {
           setPrice('');
           setLocation('');
           setIsAuthor(true)
-          setPosts(data)
+          setPosts([...posts, data.post])
         }
 
     const handleSubmit = async(e) => {
@@ -49,7 +49,6 @@ const AddPost = ({token, posts, user, setPosts}) => {
     };
     return <>
         <form onSubmit={handleSubmit}>
-            <div>Hello {user}!!</div>
             <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}placeholder="title"></input>
             <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}placeholder="description"></input>
             <input type="text" value={price} onChange={(e) => setPrice(e.target.value)}placeholder="price"></input>

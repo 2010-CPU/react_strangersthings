@@ -19,37 +19,35 @@ const App =  () => {
   const [posts, setPosts] = useState([]);
   
   return <>
-  <div>
    <nav className="navbar">
-      <h3>Strangers Things</h3>
-
-      {user.username && <div>Hello {user.username}!!</div>}
-
+      {/* <div>{user.username}!!</div> */}
+        <h3>Strangers Things</h3>
         <Link to="/">Home</Link>
         <Link to="/login">Sign In</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/posts">View Posts</Link>
         <Link to="/addposts">Add a Post</Link>
+        <Link to="/users/me">{user.username}'s Account</Link>
    </nav>
-    </div>
-    {/* <Route path = "/"></Route> */}
-    <Route path="/posts">
+   
+    <Route exact path="/">
         <GetPosts setPosts={setPosts} posts={posts}/>
     </Route>
+
     <Route path="/register">
         <Signin type={'register'} setToken={setToken} token={token} setUser={setUser}/>
-       
      </Route>
+
     <Route path="/login">
         <Signin type={'login'} setToken={setToken} setUser={setUser}/>
-  
     </Route>
+
     <Route path="/addposts">
-        <AddPost setPosts={setPosts} token={token} posts={posts}/>
+        <AddPost setPosts={setPosts} token={token} posts={posts} user={user} setUser={user}/>
     </Route>
+
     <Route path="/deleteposts">
         <DeletePost setPosts={setPosts} token={token} posts={posts}/>
-      </Route>
+    </Route>
+
     <Route path='/user/me'>
         <UserProfile setUser={setUser} token={token} posts={posts} setPosts={setPosts}/>
     </Route>

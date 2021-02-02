@@ -25,10 +25,10 @@ const UserProfile = ({user, setUser, token}) => {
     }  
 
     return <>
-        <div>
-        <div>Messages</div>
-        <div>Posts</div>
-        </div>
+        <header>
+            <div>Posts</div>
+            <div>Messages</div>
+        </header>
     </>
 }
 export default UserProfile;

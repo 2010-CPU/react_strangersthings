@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import {useHistory} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 const Signin = ({type, setToken, setUser}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  // const history = useHistory();
   const title = type === 'login' ? 'Login' : 'Register';
+  const toggleTitle = type === 'login' ? "Don't have an account?" : "Already registered?";
+  const toggleType = type === 'login' ? 'register' : 'login';
+  const history = useHistory();
  
 
   const handleSubmit = async (event) => {
@@ -43,7 +45,7 @@ const Signin = ({type, setToken, setUser}) => {
     setUsername('');
     setPassword('');
   
-    // history.push('/');
+    history.push('/');
 
   }
   //   setUsername('');
@@ -57,6 +59,7 @@ const Signin = ({type, setToken, setUser}) => {
       <input type="password" value={password} onChange={(event) => setPassword(event.target.value)}placeholder="password"></input>
       <button type="submit" >{title}</button>
     </form>
+    <Link to={`/${toggleType}`}>{toggleTitle}</Link>
    
   </>
 }
