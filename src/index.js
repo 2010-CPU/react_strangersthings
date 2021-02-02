@@ -7,9 +7,10 @@ import './style.css';
 
 import {
   Signin,
-  // Profile,
   GetPosts,
   AddPost,
+  DeletePost,
+  UserProfile,
 } from './components';
 
 const App =  () => {
@@ -36,16 +37,22 @@ const App =  () => {
         <GetPosts setPosts={setPosts} posts={posts}/>
     </Route>
     <Route path="/register">
-        <Signin type={'register'} setToken={setToken} setUser={setUser}/>
-        <Link to="/register"></Link>
+        <Signin type={'register'} setToken={setToken} token={token} setUser={setUser}/>
+       
      </Route>
     <Route path="/login">
         <Signin type={'login'} setToken={setToken} setUser={setUser}/>
-        <Link to={"/login"}></Link>
+  
     </Route>
     <Route path="/addposts">
         <AddPost setPosts={setPosts} token={token} posts={posts}/>
-        </Route>
+    </Route>
+    <Route path="/deleteposts">
+        <DeletePost setPosts={setPosts} token={token} posts={posts}/>
+      </Route>
+    <Route path='/user/me'>
+        <UserProfile setUser={setUser} token={token} posts={posts} setPosts={setPosts}/>
+    </Route>
   </>
 }
 

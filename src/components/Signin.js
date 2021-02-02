@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
-import {useHistory} from 'react-router-dom'; 
+import {useHistory} from 'react-router-dom';
 
 const Signin = ({type, setToken, setUser}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const title = type === 'login' ? 'Login' : 'Register';
-  // const toggleTitle = type === 'login' ? 'Register' : 'Login';
-  // const toggleType =  type === 'login' ? 'register' : 'login';
-  
   // const history = useHistory();
+  const title = type === 'login' ? 'Login' : 'Register';
+ 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -45,10 +42,10 @@ const Signin = ({type, setToken, setUser}) => {
     setUser(data)
     setUsername('');
     setPassword('');
+  
+    // history.push('/');
 
   }
-  
-  // history.push('/');
   //   setUsername('');
   //   setPassword('');
   }
@@ -60,7 +57,7 @@ const Signin = ({type, setToken, setUser}) => {
       <input type="password" value={password} onChange={(event) => setPassword(event.target.value)}placeholder="password"></input>
       <button type="submit" >{title}</button>
     </form>
-    {/* <Link to={`/${toggleType}`}>{toggleTitle}</Link> */}
+   
   </>
 }
 

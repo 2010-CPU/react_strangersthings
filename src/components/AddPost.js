@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import {Link} from 'react-router-dom';
 import {useHistory} from 'react-router-dom'; 
 
 
-const AddPost = ({token, posts, setPosts}) => {
+const AddPost = ({token, posts, user, setPosts}) => {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [price, setPrice] = useState([]);
     const [location, setLocation] = useState([]);
+    const [isAuthor, setIsAuthor] = useState(false)
 
     useEffect (() => {
         addPost();
@@ -27,6 +28,7 @@ const AddPost = ({token, posts, setPosts}) => {
                   description,
                   price,
                   location,
+                  isAuthor,
                 }
               })
           })
@@ -37,26 +39,24 @@ const AddPost = ({token, posts, setPosts}) => {
           setDescription('');
           setPrice('');
           setLocation('');
+          setIsAuthor(true)
           setPosts(data)
         }
 
-    
     const handleSubmit = async(e) => {
         e.preventDefault()
         addPost()
-    }
-
-
+    };
     return <>
-    <form onSubmit={handleSubmit}>
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}placeholder="title"></input>
-        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}placeholder="description"></input>
-        <input type="text" value={price} onChange={(e) => setPrice(e.target.value)}placeholder="price"></input>
-        <input type="text" value={location} onChange={(e) => setLocation(e.target.value)}placeholder="location"></input>
-        <button type="submit">Submit</button>
-    </form>
-     </>
-
+        <form onSubmit={handleSubmit}>
+            <div>Hello {user}!!</div>
+            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}placeholder="title"></input>
+            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}placeholder="description"></input>
+            <input type="text" value={price} onChange={(e) => setPrice(e.target.value)}placeholder="price"></input>
+            <input type="text" value={location} onChange={(e) => setLocation(e.target.value)}placeholder="location"></input>
+            <button type="submit">Submit</button>
+        </form>
+    </>
 }
 
 export default AddPost
