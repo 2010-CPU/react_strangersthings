@@ -31,3 +31,13 @@ const GetPosts = ({posts, setPosts}) => {
 
 
 export default GetPosts;
+
+// return <Card key={post._id}style={{ width: '18rem' }}>
+// <Card.Body>
+// <Card.Title>{post.title}</Card.Title>
+// <Card.Text>{post.description}</Card.Text>
+// <Card.Text>{post.author.username}</Card.Text>
+// <Card.Text>{post.price}</Card.Text>
+// <Card.Text>{post.location}</Card.Text>
+// </Card.Body>
+// </Card>

@@ -2,7 +2,8 @@
 import React, { useReducer, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route, Link, Switch, useHistory} from 'react-router-dom';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import './bootstrap.css';
 import './style.css';
 
 import {
@@ -25,7 +26,7 @@ const App =  () => {
         <Link to="/">Home</Link>
         <Link to="/login">Sign In</Link>
         <Link to="/addposts">Add a Post</Link>
-        <Link to="/users/me">{user.username}'s Account</Link>
+        <Link to="/users/me">User Profile</Link>
    </nav>
    
     <Route exact path="/">
@@ -48,7 +49,7 @@ const App =  () => {
         <DeletePost setPosts={setPosts} token={token} posts={posts}/>
     </Route>
 
-    <Route path='/user/me'>
+    <Route path='/users/me'>
         <UserProfile setUser={setUser} token={token} posts={posts} setPosts={setPosts}/>
     </Route>
   </>
