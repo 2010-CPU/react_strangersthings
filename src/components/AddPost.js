@@ -3,17 +3,15 @@ import {Link} from 'react-router-dom';
 import {useHistory} from 'react-router-dom'; 
 
 
-const AddPost = ({token, posts, setPosts}) => {
+const AddPost = ({token}) => {
+
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [price, setPrice] = useState([]);
     const [location, setLocation] = useState([]);
     const [isAuthor, setIsAuthor] = useState(false)
+    const [posts, setPosts] = useState([])
 
-    // useEffect (() => {
-    //     addPost();
-    //     console.log('posts:', posts)
-    // }, []);
 
     const addPost = async () => {
         const response = await fetch(`https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/posts`, {

@@ -26,9 +26,7 @@ const Signin = ({type, setToken, setUser}) => {
         }
       })
     });
-    console.log('response: ', response);
     const {data} = await response.json();
-    console.log('{data}: ', {data});
     const token = data?.token;
     if (token) {
     setToken(token);
