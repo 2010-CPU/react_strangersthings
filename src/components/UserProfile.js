@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Route, Link, Switch, useHistory} from 'react-router-dom';
 import AddPost from './AddPost';
 import DeletePost from './DeletePost';
-import EditPost from './EditPost';
+// import Navbar from './Navbar'
+import MessageList from './MessageList'
+// import UserNav from './UserNav';
 
 
-
-const UserProfile = ({token, setUser}) => {
-    const[postList, setPosts] = useState([])
-   
+const UserProfile = ({token, setUser, messages, setMessages, user, posts}) => {
+    
+    const[postList, setPosts] = useState([])   
     const getUserData = async () => {
         const response = await fetch('https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/users/me', {
             method: "GET",
@@ -28,20 +29,21 @@ const UserProfile = ({token, setUser}) => {
     }, [token]);
 
       return <>
-            <h3>Your Posts</h3>
+      <div className="your-posts">Your Posts</div>
         {
         postList.map((post, idx) => {
             const {title, price, location, description, _id, createdAt,  author, isAuthor} = post;
-            return  <div key={idx}>
-                <h3>{title}</h3>
-                <ul>
-                    <li>What:{description}</li>
-                    <li>Who: {author.username}</li>
-                   <li>How much?:{price}</li>
-                   <li>Where:{location}</li>
-                </ul>
-                <DeletePost token={token} setPosts={setPosts} postList={postList} postId={_id}/>
-              
+            return  <div className="post-container" key={idx}>
+                <div className="post">
+                <span className="post-info">
+                <div className="post-title">{title}</div>
+                    <div>Description:  {description}</div>
+                   <div>Price: {price}</div>
+                   <div>Location: {location}</div>
+                    <div>Seller: {author.username}</div>
+                </span>
+            </div>
+            <DeletePost token={token} setPosts={setPosts} postList={postList} postId={_id}/>
             </div>
             })
         }

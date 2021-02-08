@@ -1,0 +1,249 @@
+
+
+body {
+    display: flex;
+    min-height: calc(100vh - 20vh);
+    background-image: url("https://images.unsplash.com/photo-1560355206-7bdbaa06ea8c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+    background-repeat: repeat;
+    background-size: 100vw;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    color: white;
+    
+    
+} 
+.links{
+    display: flex;
+    padding-right: 10px;
+    margin: 0;
+    font-family: 'Lobster', cursive;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+.user-link {
+    display: flex;
+    padding-right: 10px;
+    margin-right: 0;
+    font-family: 'Lobster', cursive;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+.login-link{
+    display: flex;
+    padding-right: 10px;
+    margin-right: 0;
+    font-family: 'Lobster', cursive;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+.page-title {
+    text-decoration: none;
+    font-size: 28px;
+    color: white;
+    font-family: 'Lobster', cursive;
+}
+.nav-bar :nth-child(1){
+    margin-right: auto;
+    font-size: 28px;
+}
+.post{
+   background-color: white;
+   height: 400px;
+   width: 320px;
+   border: 1px solid grey;
+   text-align: left;
+}
+.post-container{
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+}
+.post div {
+    padding: 15px;
+}
+.post-title {
+   padding: 10px;
+   margin-bottom: 15px;
+   font-size: 25px;
+   text-align: center;
+   background-color: lightblue
+}
+.post-description {
+    font-size: 20px;
+}
+.price {
+    font-weight: bold;
+}
+.your-posts {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Lobster', cursive;
+    color: white;
+}
+.login-container {
+    display: block;
+    margin-left: 50%;
+    margin-right: auto;
+    background-color: white;
+    text-align: center;
+    width: 450px;
+    height: 300px;
+    padding-top: 30px;
+    border-radius: 30px;
+    border: 3px solid grey;
+}
+.signin-form{
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.signin-form input {
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+}
+.signin-form placeholder {
+    text-align: center;
+}
+.toggle-login{
+    text-decoration: none;
+}
+.button {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    border-radius: 20px;
+    width: 75px;
+} 
+
+.button:hover {
+    background-color: lightgoldenrodyellow;
+    color: white;
+} 
+.message-form{
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 5px; 
+    align-items: center;
+    margin-bottom: 15px;
+    flex-direction: column;
+}
+.message-form-input {
+    width: 250px;
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.btn-message {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    border-radius: 20px;
+    width: 100px;
+} 
+
+.btn-message:hover {
+    background-color: lightgoldenrodyellow;
+    color: lightblue;
+} 
+.button-delete {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 14px;
+    margin: 5px;
+    transition: 0.3s;
+    border-radius: 20px;
+    width: 100px;
+} 
+
+.button-delete:hover {
+    background-color: lightgoldenrodyellow;
+    color: lightblue;
+} 
+.messages-to-me-container{
+    background-color: white;
+    margin: 5px;
+    float: right;
+    width: 25%;
+}
+
+.messages-from-me-container{
+    background-color: white;
+    margin: 5px;
+    float: left;
+    width: 25%;
+}
+/* .messages-to {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    
+}
+.messages-from {
+    display:flex;
+    flex-direction: column;
+    width: 25%;
+} */
+
+.add-post-container {
+    display: block;
+    margin-left: 50%;
+    margin-right: auto;
+    background-color: white;
+    text-align: center;
+    width: 450px;
+    height: 300px;
+    padding-top: 30px;
+    border-radius: 30px;
+    border: 3px solid grey;
+}
+
+.add-post-form{
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.add-post-form input {
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+}
+.add-post-form placeholder {
+    text-align: center;
+}
+.description{
+    width: 200px;
+}

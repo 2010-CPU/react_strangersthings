@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Route, Link, Switch, useHistory} from 'react-ro
 const MessageForm = ({token, postId}) => {
     const [content, setContent] =useState('');
 
-
         const onSubmit = async (event) => {
             console.log('hi')
         event.preventDefault()
@@ -23,15 +22,13 @@ const MessageForm = ({token, postId}) => {
         const data = await response.json()
         console.log('data', data)
         setContent('');
-
     }
-   
     return <>
-        <form onSubmit={onSubmit}>
-        <input type="text" value={content} onChange={(event) => {
+        <form onSubmit={onSubmit} className="message-form">
+        <input type="text" className="message-form-input" value={content} onChange={(event) => {
             setContent(event.target.value);
         }} placeholder="Type message here"></input>
-        <button type="submit">SEND MESSAGE</button>
+        <button className="btn-message" type="submit">SEND MESSAGE</button>
         </form>
         </>
 }

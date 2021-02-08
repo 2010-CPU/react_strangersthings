@@ -44,23 +44,36 @@ const Signin = ({type, setToken, setUser}) => {
     setPassword('');
   
     history.push('/');
-
   }
-  //   setUsername('');
-  //   setPassword('');
-  }
+}
 
   return <>
-    <h2>{title}</h2>
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={username} onChange={(event) => setUsername(event.target.value)}placeholder="username"></input>
+    <div className="login-container">
+    <h2 className="login-title">{title}</h2>
+    <form onSubmit={handleSubmit} className="signin-form">
+      <input type="text"  value={username} onChange={(event) => setUsername(event.target.value)}placeholder="username"></input>
       <input type="password" value={password} onChange={(event) => setPassword(event.target.value)}placeholder="password"></input>
-      <button type="submit" >{title}</button>
+      <button type="submit" className="button" >{title}</button>
+    <Link to={`/${toggleType}`} className="toggle-login">{toggleTitle}</Link>
     </form>
-    <Link to={`/${toggleType}`}>{toggleTitle}</Link>
-   
+    </div>
   </>
 }
 
 export default Signin;
 
+{/* <h2>{title}</h2>
+<form onSubmit={handleSubmit}> */}
+
+{/* <div className="form-outline mb-4">
+<input type="text" className="form-control" value={username} onChange={(event) => setUsername(event.target.value)}placeholder="username"></input>
+<input type="password" className="form-control" value={password} onChange={(event) => setPassword(event.target.value)}placeholder="password"></input>
+{/* <label class="form-label" for="form1Example1">Email address</label> */}
+{/* </div>
+<div className="form-outline mb-4">
+  {/* <input type="text" className="form-control" value={username} onChange={(event) => setUsername(event.target.value)}placeholder="username"></input> */}
+  {/* <input type="password" className="form-control" value={password} onChange={(event) => setPassword(event.target.value)}placeholder="password"></input>
+  <button type="submit" className="btn btn-primary btn-block">{title}</button>
+</div>
+</form>  */}
+{/* <Link to={`/${toggleType}`}>{toggleTitle}</Link>  */}

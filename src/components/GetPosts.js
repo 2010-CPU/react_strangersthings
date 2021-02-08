@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import { DeletePost, MessageForm } from './index';
 
 
+
 const GetPosts = ({token, setToken, setUser, postId}) => {
     const [postList, setPosts] = useState([])
 
@@ -30,82 +31,90 @@ const GetPosts = ({token, setToken, setUser, postId}) => {
         }, []);
 
           return <>
+          
             {
-            postList.map(post => {
+                postList.map(post => {
+                    const {title, price, location, description,  _id, author, isAuthor} = post;
+                    return  (
+                        <div className="post-container">
+                        <div className="post" key={_id}>
+                                <div className="post-title">{title}</div>
+                                <div className="post-description">Description:  {description}</div>
+                                <div className="price">Price:  {price}</div>
+                                <div className="location">Location:  {location}</div>
+                                <div className="seller">Seller:  {author.username}</div> 
+                            </div>
+                {
+                    isAuthor ?< DeletePost token={token} postList={postList} setPosts={setPosts} postId={_id}/> : ''
                 
-                const {title, price, location, description, createdAt, _id, author, isAuthor} = post;
-                return  (
-                    <div key={_id}>
-                    <h3>{title}</h3>
-                    <ul>
-                        <li>Description: {description}</li>
-                        <li>Price: {price}</li>
-                       <li>Location: {location}</li>
-                       <li>Created At: {createdAt}</li>
-                       <li>Seller: {author.username}</li> 
- 
-                    {
-                        isAuthor ?< DeletePost token={token} postList={postList} setPosts={setPosts} postId={_id}/> : ''
-                    
-                    } 
-                    {
-                       token && !isAuthor ? 
-                        <MessageForm token={token} setUser={setUser} postId={_id} setPosts={setPosts}/> : ''
-                    }
-            
-                    </ul>
+                } 
+                {
+                token && !isAuthor ? 
+                    <MessageForm token={token} setUser={setUser} postId={_id} setPosts={setPosts}/> : ''
+                }
                 </div>
                 )
-                })
+            })
+        }
+                
+                </>
             }
-        </>
-    }
 
+            
+
+
+
+
+
+// return  (
+//     <div key={_id}>
+//     <h3>{title}</h3>
+//     <ul>
+//         <li>Description: {description}</li>
+//         <li>Price: {price}</li>
+//        <li>Location: {location}</li>
+//        <li>Created At: {createdAt}</li>
+//        <li>Seller: {author.username}</li> 
+
+//     {
+//         isAuthor ?< DeletePost token={token} postList={postList} setPosts={setPosts} postId={_id}/> : ''
     
-    
-
-
-
-
-
-
-
-
-//     const fetchPosts = async () => {
-//         const response = await fetch('https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/posts')
-//         const data = await response.json();
-//         console.log(data.data.posts);
-//         setPosts(data.data.posts)
+//     } 
+//     {
+//        token && !isAuthor ? 
+//         <MessageForm token={token} setUser={setUser} postId={_id} setPosts={setPosts}/> : ''
 //     }
-//     useEffect (() => {
-//         fetchPosts();
-//     }, []);
-//       return <>
-//         {
-//         posts.map(post => {
-//             return  <div key={post._id}>
-//                 <h3>{post.title}</h3>
-//                 <ul>
-//                     <li>What:{post.description}</li>
-//                     <li>Who: {post.author.username}</li>
-//                    <li>How much?:{post.price}</li>
-//                    <li>Where:{post.location}</li>
-//                 </ul>
-//             </div>
-//             })
-//         }
-//     </>
-// }
+
+//     </ul>
+// </div>
+// )
 
 
 export default GetPosts;
 
-// return <Card key={post._id}style={{ width: '18rem' }}>
-// <Card.Body>
-// <Card.Title>{post.title}</Card.Title>
-// <Card.Text>{post.description}</Card.Text>
-// <Card.Text>{post.author.username}</Card.Text>
-// <Card.Text>{post.price}</Card.Text>
-// <Card.Text>{post.location}</Card.Text>
-// </Card.Body>
-// </Card>
+// return  (
+                    
+//     <div className="card" key={_id} >
+//         <div className="card-body" >
+//             <h5 className="card-title">{title}</h5>
+//             <h6 className="card-subtitle mb-2 text-muted">Location: {location}</h6>
+//             <p className="card-text">{description}</p>
+//             <p className="card-text">Seller: {author.username}</p>
+//             <p className="card-text">Price: {price}</p>
+//             {/* <Link path="/messages">Send a Message</Link> */}
+    
+//     {
+//         isAuthor ?< DeletePost token={token} postList={postList} setPosts={setPosts} postId={_id}/> : ''
+    
+//     } 
+//     {
+//        token && !isAuthor ? 
+//         <MessageForm token={token} setUser={setUser} postId={_id} setPosts={setPosts}/> : ''
+//     }
+//     </div>
+//     </div>
+// )
+// })
+// }
+
+// </>

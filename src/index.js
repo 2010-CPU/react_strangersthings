@@ -2,9 +2,8 @@
 import React, { useReducer, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route, Link, Switch, useHistory} from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 // import './bootstrap.css';
-import './style.css';
+import './styles.css'
 
 import {
   Signin,
@@ -14,7 +13,9 @@ import {
   UserProfile,
   MessageForm,
   MessageList,
-  // EditPost,
+  Navbar,
+  // UserNav,
+  // SearchBar,
 } from './components';
 
 const App =  () => {
@@ -24,15 +25,23 @@ const App =  () => {
   const [messages, setMessages] = useState([])
   
   return <>
-   <nav className="navbar">
-      <div>{user.username}</div>
-        <h3>Strangers Things</h3>
-        <Link to="/">Home</Link>
-        <Link to="/login">Sign In</Link>
-        <Link to="/addposts">Add a Post</Link>
-        <Link to="/users/me">User Profile</Link>
-        <Link to="/messages">Messages List</Link>
-   </nav>
+
+    {/* <nav className="nav-bar">
+      {user.username && <div className="logged-in">Hello {user.username}</div> }
+      <div className="links">Strangers Things</div>
+          <Link to="/" className="links">Home</Link>
+  {/*         <Link className="links"to="/login">Sign In</Link> */}
+          {/* <Link to="/login" onClick={() => {
+              if (token) {
+              setToken('')
+              setUser({})
+              }
+              }} className="links">{token ? 'Logout' : 'Sign in'}  </Link> 
+          {/* <Link to="/users/me" className="links">User Profile</Link> */}
+          {/* <Link to="users/me" className="links">{token ? 'User Profile' : ''}</Link> 
+    </nav>  */}
+         
+    <Navbar token={token} setToken={setToken} messages={messages} setMessages={setMessages} user={user}  setUser={setUser} />
    
     <Route exact path="/">
         <GetPosts setPosts={setPosts} posts={posts} token={token} setToken={setToken}/>
@@ -49,25 +58,14 @@ const App =  () => {
     <Route path="/addposts">
         <AddPost setPosts={setPosts} token={token} posts={posts} user={user} setUser={user}/>
     </Route>
-    {/* <Route path="/delete">
-        <DeletePost setPosts={setPosts} postList={postList} token={token} posts={posts}/>
-    </Route> */}
-   
-    
-    
-
     <Route path='/users/me'>
-        <UserProfile setUser={setUser} setPosts={setPosts} token={token} posts={posts}/>
+        <UserProfile user={user} setUser={setUser} setPosts={setPosts} token={token} posts={posts} messages={messages} setMessages={setMessages}/>
     </Route>
-  
     
     <Route path='/messages'>
-      <MessageList token={token} setUser={setUser} messages={messages} setMessages={setMessages}/>
+      <MessageList token={token} setUser={setUser} user={user} messages={messages} setMessages={setMessages}/>
      </Route>
-   
-    {/* <Route path='/'>
-        <EditPost/>
-    </Route> */}
+
   </>
 }
 
