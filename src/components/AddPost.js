@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
 import {useHistory} from 'react-router-dom'; 
 
 
@@ -10,7 +9,6 @@ const AddPost = ({token}) => {
     const [location, setLocation] = useState([]);
     const [isAuthor, setIsAuthor] = useState(false)
     const [posts, setPosts] = useState([])
-
     const history = useHistory();
 
     const addPost = async () => {
@@ -30,9 +28,7 @@ const AddPost = ({token}) => {
                 }
               })
           })
-          console.log('token:', token)
           const {data} = await response.json();
-          console.log('add-data:', data)
           setTitle('');
           setDescription('');
           setPrice('');
@@ -45,7 +41,6 @@ const AddPost = ({token}) => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         addPost()
-
     };
     return <>
         <div className="add-post-container">

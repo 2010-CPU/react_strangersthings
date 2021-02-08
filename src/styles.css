@@ -8,16 +8,12 @@ body {
     background-size: 100vw;
     margin: 0;
     padding: 0;
-    
 }
-
 .nav-bar {
     display: flex;
     justify-content: flex-end;
     padding: 15px;
-    color: white;
-    
-    
+    color: white;  
 } 
 .links{
     display: flex;
@@ -133,7 +129,6 @@ body {
     border-radius: 20px;
     width: 75px;
 } 
-
 .button:hover {
     background-color: lightgoldenrodyellow;
     color: white;
@@ -155,7 +150,6 @@ body {
     margin: 5px;
     text-decoration: none;
 }
-
 .btn-message {
     background-color: #ddd;
     border: none;
@@ -168,7 +162,6 @@ body {
     border-radius: 20px;
     width: 100px;
 } 
-
 .btn-message:hover {
     background-color: lightgoldenrodyellow;
     color: lightblue;
@@ -185,13 +178,11 @@ body {
     border-radius: 20px;
     width: 100px;
 } 
-
 .button-delete:hover {
     background-color: lightgoldenrodyellow;
     color: lightblue;
 } 
-
- .messages-inbox-container{
+.messages-inbox-container{
      display: inline-block;
      vertical-align: top;
      margin: 10px;
@@ -201,8 +192,6 @@ body {
     vertical-align: top;
     margin: 10px;
 }
-
-
 .messages-inbox-container{
     background-color: rgb(191, 206, 251);
     width: 45%;
@@ -214,15 +203,12 @@ body {
     width: 45%;
     margin: 2%;
     border-radius: 15px;
-    
-
 } 
 .messages-in{
     text-align: center;;
 }
 .messages-out{
     text-align: center;
-
 }
 .add-post-container {
     display: block;
@@ -236,7 +222,6 @@ body {
     border-radius: 30px;
     border: 3px solid grey;
 }
-
 .add-post-form{
     display: flex;
     margin-right: auto;

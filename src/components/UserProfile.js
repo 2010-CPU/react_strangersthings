@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {BrowserRouter as Router, Route, Link, Switch, useHistory} from 'react-router-dom';
-import AddPost from './AddPost';
 import DeletePost from './DeletePost';
-// import Navbar from './Navbar'
-import MessageList from './MessageList'
-// import UserNav from './UserNav';
 
-
-const UserProfile = ({token, setUser, messages, setMessages, user, posts}) => {
+const UserProfile = ({token, setUser}) => {
     
     const[postList, setPosts] = useState([])   
     const getUserData = async () => {
@@ -19,8 +13,6 @@ const UserProfile = ({token, setUser, messages, setMessages, user, posts}) => {
             }
         })
         const data = await response.json();
-        console.log(data)
-        console.log(data.data.posts)
         setUser(data.data.posts)
         setPosts(data.data.posts)
     }
@@ -32,17 +24,17 @@ const UserProfile = ({token, setUser, messages, setMessages, user, posts}) => {
       <div className="your-posts">Your Posts</div>
         {
         postList.map((post, idx) => {
-            const {title, price, location, description, _id, createdAt,  author, isAuthor} = post;
+            const {title, price, location, description, _id,  author} = post;
             return  <div className="post-container" key={idx}>
                 <div className="post">
                 <span className="post-info">
                 <div className="post-title">{title}</div>
                     <div>Description:  {description}</div>
-                   <div>Price: {price}</div>
-                   <div>Location: {location}</div>
+                    <div>Price: {price}</div>
+                    <div>Location: {location}</div>
                     <div>Seller: {author.username}</div>
                 </span>
-            </div>
+                </div>
             <DeletePost token={token} setPosts={setPosts} postList={postList} postId={_id}/>
             </div>
             })

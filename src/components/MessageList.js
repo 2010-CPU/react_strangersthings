@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {BrowserRouter as Router, Route, Link, Switch, useHistory} from 'react-router-dom';
+import React, { useEffect } from 'react';
+
 
 const MessageList = ({token, messages, setMessages, user, setUser}) => {
 
@@ -13,10 +13,7 @@ const MessageList = ({token, messages, setMessages, user, setUser}) => {
             }
         })
         const data = await response.json();
-        console.log('data-object:', data)
-        console.log(data.data.messages)
         setMessages(data.data.messages)  
-        console.log(data.data.username)
         setUser(data.data.username)
     }
     useEffect (() => {
@@ -24,9 +21,8 @@ const MessageList = ({token, messages, setMessages, user, setUser}) => {
     }, [token]);
 
     return <>
-            <div className="message-box">
-           
-    {
+            <div className="message-box">       
+        {
             messages.map((message, idx)  => {           
            if (message.fromUser.username !== user ){
                 return <div className="messages-inbox-container" key={idx}>
@@ -36,8 +32,7 @@ const MessageList = ({token, messages, setMessages, user, setUser}) => {
                 <p>Message:{message.content}</p>
                 <p>From:{message.fromUser.username}</p>
                 </div>
-            </div>
-            
+            </div>  
            }
             else {
                 return <div className="messages-outbox-container" key={idx}>
@@ -50,7 +45,7 @@ const MessageList = ({token, messages, setMessages, user, setUser}) => {
             </div>
             }      
         })
-    }
+        }
     </div>
 </>
 }

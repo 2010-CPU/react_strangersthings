@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import {BrowserRouter as Router, Route, Link, Switch, useHistory} from 'react-router-dom';
+import React, { useState } from 'react';
 
 const MessageForm = ({token, postId}) => {
     const [content, setContent] =useState('');
-
-        const onSubmit = async (event) => {
-            console.log('hi')
+    
+    const onSubmit = async (event) => {
         event.preventDefault()
         const response = await fetch(`https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/posts/${postId}/messages`,{
             method: "POST",
@@ -20,7 +18,6 @@ const MessageForm = ({token, postId}) => {
             })
         })
         const data = await response.json()
-        console.log('data', data)
         setContent('');
     }
     return <>
