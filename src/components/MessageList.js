@@ -24,22 +24,24 @@ const MessageList = ({token, messages, setMessages, user, setUser}) => {
     }, [token]);
 
     return <>
-
+            <div className="message-box">
+           
     {
-            messages.map((message, idx)  => {
+            messages.map((message, idx)  => {           
            if (message.fromUser.username !== user ){
-                return <div className="messages-to-me-container" key={idx}>
-                    <div className="messages-to">
+                return <div className="messages-inbox-container" key={idx}>
+                    <div className="messages-in">
                 <h3>Message Inbox</h3>
                 <p>Re: {message.post.title}</p>
                 <p>Message:{message.content}</p>
                 <p>From:{message.fromUser.username}</p>
                 </div>
             </div>
+            
            }
             else {
-                return <div className="messages-from-me-container" key={idx}>
-                <div className="messages-from">
+                return <div className="messages-outbox-container" key={idx}>
+                <div className="messages-out">
                 <h3>Message Outbox</h3>
                 <p>Re: {message.post.title}</p>
                 <p>Message:{message.content}</p>
@@ -49,6 +51,7 @@ const MessageList = ({token, messages, setMessages, user, setUser}) => {
             }      
         })
     }
+    </div>
 </>
 }
 

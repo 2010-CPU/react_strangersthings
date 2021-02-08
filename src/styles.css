@@ -190,31 +190,40 @@ body {
     background-color: lightgoldenrodyellow;
     color: lightblue;
 } 
-.messages-to-me-container{
-    background-color: white;
-    margin: 5px;
-    float: right;
-    width: 25%;
+
+ .messages-inbox-container{
+     display: inline-block;
+     vertical-align: top;
+     margin: 10px;
+ }
+ .messages-outbox-container{
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
 }
 
-.messages-from-me-container{
-    background-color: white;
-    margin: 5px;
-    float: left;
-    width: 25%;
+
+.messages-inbox-container{
+    background-color: rgb(191, 206, 251);
+    width: 45%;
+    margin: 2%;
+    border-radius: 15px;
 }
-/* .messages-to {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
+.messages-outbox-container{
+    background-color: #c0fcf1;
+    width: 45%;
+    margin: 2%;
+    border-radius: 15px;
     
-}
-.messages-from {
-    display:flex;
-    flex-direction: column;
-    width: 25%;
-} */
 
+} 
+.messages-in{
+    text-align: center;;
+}
+.messages-out{
+    text-align: center;
+
+}
 .add-post-container {
     display: block;
     margin-left: 50%;
