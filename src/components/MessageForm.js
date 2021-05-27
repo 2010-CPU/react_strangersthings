@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './style/messageForm.css'
 const MessageForm = ({token, postId}) => {
     const [content, setContent] =useState('');
     

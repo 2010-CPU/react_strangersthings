@@ -1,0 +1,20 @@
+/* * {
+    box-sizing: border-box;
+} */
+.nav-bar {
+    display: flex;
+    justify-content: flex-end;
+}
+.logged-in {
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
+#link-title {
+    align-self: center;
+    padding: 1rem;
+    font-size: 2rem;
+}
+.links {
+    padding: 1rem;
+    justify-content: space-between;
+}

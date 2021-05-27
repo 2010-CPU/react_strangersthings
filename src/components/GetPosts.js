@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DeletePost, MessageForm } from './index';
+import './style/post.css'
 
 const GetPosts = ({token, setToken, setUser}) => {
     const [postList, setPosts] = useState([])
@@ -38,14 +39,14 @@ const GetPosts = ({token, setToken, setUser}) => {
                             <div className="price">Price:  {price}</div>
                             <div className="location">Location:  {location}</div>
                             <div className="seller">Seller:  {author.username}</div> 
-                    </div>
                 {
                     isAuthor ?< DeletePost token={token} postList={postList} setPosts={setPosts} postId={_id}/> : ''
                 } 
                 {
-                token && !isAuthor ? 
+                    token && !isAuthor ? 
                     <MessageForm token={token} setUser={setUser} postId={_id} setPosts={setPosts}/> : ''
                 }
+                </div>
                 </div>
                 )
             })

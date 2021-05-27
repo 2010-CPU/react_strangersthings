@@ -1,0 +1,37 @@
+
+.post-container {
+display: inline-grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  padding: 10px;
+  /* align-items: stretch; */
+  margin: auto;
+  vertical-align: center;
+  }
+
+/* .post-container{
+    display: inline-block;
+    vertical-align: top;
+    margin: auto;
+    padding: 10px;
+    
+} */
+.post{
+    height: 300px;
+    width: 200px;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    overflow: auto;
+    border-radius: 5px;
+  
+}
+.post-title {
+    background-color: rgb(70, 157, 184);
+    padding: 10px 0px 10px 0px;
+    width: 200px;
+    border: solid 1px black;
+}
+.post-description {
+    margin-top: 10px;
+}
+

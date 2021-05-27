@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {useHistory} from 'react-router-dom'; 
 
-
 const AddPost = ({token}) => {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);

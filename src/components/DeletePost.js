@@ -1,4 +1,4 @@
-
+import './style/delete.css'
 const DeletePost = ({token, postId, setPosts, postList}) => {
 
     const handleDelete = async (id) => {

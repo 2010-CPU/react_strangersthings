@@ -1,0 +1,17 @@
+.message-form-input {
+    margin-top: 10px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.btn-message {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    margin-top: 10px;
+  }
+  
+  .btn-message:hover {
+    background-color: #555555;
+    color: white;
+  }

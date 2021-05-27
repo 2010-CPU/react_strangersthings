@@ -1,6 +1,6 @@
 
-
-body {
+/*========================================================
+/* body {
     display: flex;
     min-height: calc(100vh - 20vh);
     background-image: url("https://images.unsplash.com/photo-1560355206-7bdbaa06ea8c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
@@ -52,35 +52,54 @@ body {
     margin-right: auto;
     font-size: 28px;
 }
-.post{
-   background-color: white;
-   height: 400px;
-   width: 320px;
-   border: 1px solid grey;
-   text-align: left;
-}
+.post-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    grid-template-rows: repeat(auto, 50px);
+    align-items: center;
+    justify-content: space-between;
+  }
+  .post {
+    background: red;
+    border: 3px solid gold;
+    text-align: center;
+  }
+
 .post-container{
     display: inline-block;
     vertical-align: top;
     margin: 10px;
+    
+}
+.post{
+   height: 300px;
+   width: 200px;
+   border: 1px solid grey;
+   text-align: center;
+   background-color: rgba(182, 241, 226, 0.75);
+   word-wrap: break-word;
+  
 }
 .post div {
-    padding: 15px;
+    margin: 15px auto;
 }
 .post-title {
-   padding: 10px;
-   margin-bottom: 15px;
-   font-size: 25px;
-   text-align: center;
-   background-color: lightblue
-}
-.post-description {
-    font-size: 20px;
-}
-.price {
+    
+
+ 
+   /* padding: 10px; */
+   /* margin-bottom: 15px; */
+   /* font-size: 25px; */
+   /* text-align: center; */
+
+/* .post-description {
+    font-size: 15px;
+} */
+/* .price {
     font-weight: bold;
-}
-.your-posts {
+} */
+/* .your-posts {
     text-align: center;
     font-size: 40px;
     font-family: 'Lobster', cursive;
@@ -240,4 +259,4 @@ body {
 }
 .description{
     width: 200px;
-}
+}  */
