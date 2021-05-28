@@ -1,0 +1,34 @@
+.login-container {
+    /* border: 1px solid black; */
+    height: 80vh;
+    width: 40vw;
+    min-width: 150px;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: white;
+}
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+.signin-form > * {
+    margin-bottom: 15px;
+}
+.signin-form input {
+    border: 0;
+    border-bottom: 2px solid lightgray;
+}
+.button {
+    border-radius: 15px;
+    padding: 5px;
+    margin: 10px;
+}
+.toggle-login {
+    padding: 15px;
+}

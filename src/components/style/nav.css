@@ -4,6 +4,7 @@
 .nav-bar {
     display: flex;
     justify-content: flex-end;
+    background-color: white;
 }
 .logged-in {
     padding-top: 1rem;
