@@ -34,11 +34,11 @@ const GetPosts = ({token, setToken, setUser}) => {
                 return  (
                     <div className="post-container" key={_id}>
                     <div className="post">
-                            <div className="post-title">{title}</div>
-                            <div className="post-description">Description:  {description}</div>
-                            <div className="price">Price:  {price}</div>
-                            <div className="location">Location:  {location}</div>
-                            <div className="seller">Seller:  {author.username}</div> 
+                            <div className="post-title"><strong>{title}</strong></div>
+                            <div className="post-description"><strong>Description:</strong>  {description}</div>
+                            <div className="price"><strong>Price:</strong>  {price}</div>
+                            <div className="location"><strong>Location:</strong>  {location}</div>
+                            <div className="seller"><strong>Seller:</strong>  {author.username}</div> 
                 {
                     isAuthor ?< DeletePost token={token} postList={postList} setPosts={setPosts} postId={_id}/> : ''
                 } 

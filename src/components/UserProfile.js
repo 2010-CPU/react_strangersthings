@@ -26,16 +26,14 @@ const UserProfile = ({token, setUser}) => {
         postList.map((post, idx) => {
             const {title, price, location, description, _id,  author} = post;
             return  <div className="post-container" key={idx}>
-                <div className="post">
-                <span className="post-info">
-                <div className="post-title">{title}</div>
-                    <div>Description:  {description}</div>
-                    <div>Price: {price}</div>
-                    <div>Location: {location}</div>
-                    <div>Seller: {author.username}</div>
-                </span>
+                  <div className="post">
+                    <div className="post-title"><strong>{title}</strong></div>
+                    <div className="post-description"><strong>Description:</strong>  {description}</div>
+                    <div className="price"><strong>Price:</strong>  {price}</div>
+                    <div className="location"><strong>Location:</strong>  {location}</div>
+                    <div className="seller"><strong>Seller:</strong>  {author.username}</div> 
+                <DeletePost token={token} setPosts={setPosts} postList={postList} postId={_id}/>
                 </div>
-            <DeletePost token={token} setPosts={setPosts} postList={postList} postId={_id}/>
             </div>
             })
         }

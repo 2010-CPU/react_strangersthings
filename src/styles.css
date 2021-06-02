@@ -1,5 +1,5 @@
 body {
-    background-color: paleturquoise;
+    background-image: linear-gradient(to left, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
 }
 /*========================================================
 /* body {
@@ -21,7 +21,6 @@ body {
     display: flex;
     padding-right: 10px;
     margin: 0;
-    font-family: 'Lobster', cursive;
     text-decoration: none;
     font-size: 20px;
     color: white;
@@ -29,8 +28,7 @@ body {
 .user-link {
     display: flex;
     padding-right: 10px;
-    margin-right: 0;
-    font-family: 'Lobster', cursive;
+    margin-right: 0;        
     text-decoration: none;
     font-size: 20px;
     color: white;
@@ -39,7 +37,6 @@ body {
     display: flex;
     padding-right: 10px;
     margin-right: 0;
-    font-family: 'Lobster', cursive;
     text-decoration: none;
     font-size: 20px;
     color: white;
@@ -48,7 +45,6 @@ body {
     text-decoration: none;
     font-size: 28px;
     color: white;
-    font-family: 'Lobster', cursive;
 }
 .nav-bar :nth-child(1){
     margin-right: auto;
@@ -104,7 +100,6 @@ body {
 /* .your-posts {
     text-align: center;
     font-size: 40px;
-    font-family: 'Lobster', cursive;
     color: white;
 }
 .login-container {

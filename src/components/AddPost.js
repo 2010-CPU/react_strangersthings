@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {useHistory} from 'react-router-dom'; 
-
+import './style/addPost.css'
 const AddPost = ({token}) => {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
@@ -46,7 +46,7 @@ const AddPost = ({token}) => {
             <h3>Create your new post!</h3>
         <form onSubmit={handleSubmit} className="add-post-form">
             <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}placeholder="title"></input>
-            <input type="text" className="description" value={description} onChange={(e) => setDescription(e.target.value)}placeholder="description"></input>
+            <textarea type="text" className="description" value={description} onChange={(e) => setDescription(e.target.value)}placeholder="description"></textarea>
             <input type="text" value={price} onChange={(e) => setPrice(e.target.value)}placeholder="price"></input>
             <input type="text" value={location} onChange={(e) => setLocation(e.target.value)}placeholder="location"></input>
             <button type="submit" className="button">Submit</button>
