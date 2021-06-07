@@ -28,3 +28,10 @@
     font-family: 'Limelight', cursive;
 
 }
+.logged-in {
+    font-family: 'Limelight', cursive;
+    font-weight: 200;
+    font-size: 25px;
+    color: darkslateblue;
+    margin-left: 15px;
+}

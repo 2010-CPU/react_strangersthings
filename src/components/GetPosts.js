@@ -30,15 +30,16 @@ const GetPosts = ({token, setToken, setUser}) => {
           return <>
             {
             postList.map(post => {
-                const {title, price, location, description,  _id, author, isAuthor} = post;
+                const {title, price, location, description,  _id, author, isAuthor, willDeliver} = post;
                 return  (
                     <div className="post-container" key={_id}>
                     <div className="post">
-                            <div className="post-title"><strong>{title}</strong></div>
-                            <div className="post-description"><strong>Description:</strong>  {description}</div>
-                            <div className="price"><strong>Price:</strong>  {price}</div>
-                            <div className="location"><strong>Location:</strong>  {location}</div>
-                            <div className="seller"><strong>Seller:</strong>  {author.username}</div> 
+                            <div className="post-title"><b>{title}</b></div>
+                            <div className="post-description"><b>Description:</b>  {description}</div>
+                            <div className="price"><b>Price:</b>  {price}</div>
+                            <div className="location"><b>Location:</b>  {location}</div>
+                            <div classname="will-deliver"><b>Will Deliver?</b> {willDeliver === true? 'Yes' : 'No'}</div>
+                            <div className="seller"><b>Seller:</b>  {author.username}</div> 
                 {
                     isAuthor ?< DeletePost token={token} postList={postList} setPosts={setPosts} postId={_id}/> : ''
                 } 

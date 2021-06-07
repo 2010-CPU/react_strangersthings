@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import DeletePost from './DeletePost';
+import './style/userProfile.css';
 
 const UserProfile = ({token, setUser}) => {
-    
+
     const[postList, setPosts] = useState([])   
     const getUserData = async () => {
         const response = await fetch('https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/users/me', {
@@ -31,7 +32,7 @@ const UserProfile = ({token, setUser}) => {
                     <div className="post-description"><strong>Description:</strong>  {description}</div>
                     <div className="price"><strong>Price:</strong>  {price}</div>
                     <div className="location"><strong>Location:</strong>  {location}</div>
-                    <div className="seller"><strong>Seller:</strong>  {author.username}</div> 
+                    <div className="seller"><strong>Seller:</strong>You.. again</div> 
                 <DeletePost token={token} setPosts={setPosts} postList={postList} postId={_id}/>
                 </div>
             </div>
