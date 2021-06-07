@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './styles.css'
@@ -18,6 +18,24 @@ const App =  () => {
   const [user, setUser] = useState({});
   const [posts, setPosts] = useState([]);
   const [messages, setMessages] = useState([])
+
+  useEffect( () => {
+    setToken(localStorage.getItem('token'))
+    if (token) {
+      const getToken = async() => {
+        const response = await fetch('https://strangers-things.herokuapp.com/api/2010-CPU-RM-WEB-PT/users/me', { 
+          method: "GET",
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+          }
+      })
+      const data = await response.json();
+      setUser(data.data)
+      }
+      getToken()
+    }
+  },[token])
   
   return <>
     <Navbar token={token} setToken={setToken} messages={messages} setMessages={setMessages} user={user}  setUser={setUser} />
@@ -38,16 +56,16 @@ const App =  () => {
         <AddPost setPosts={setPosts} token={token} posts={posts} user={user} setUser={user}/>
     </Route>
 
-    <Route path='/users/me'>
+    <Route path="/users/me">
         <UserProfile user={user} setUser={setUser} setPosts={setPosts} token={token} posts={posts} messages={messages} setMessages={setMessages}/>
     </Route>
     
-    <Route path='/messages'>
+    <Route path="/messages">
         <MessageList token={token} setUser={setUser} user={user} messages={messages} setMessages={setMessages}/>
      </Route>
   </>
 }
-
+//you need a logout button!!!
 ReactDOM.render(
   <Router>
     <App />

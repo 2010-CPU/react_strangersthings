@@ -38,7 +38,7 @@ const GetPosts = ({token, setToken, setUser}) => {
                             <div className="post-description"><b>Description:</b>  {description}</div>
                             <div className="price"><b>Price:</b>  {price}</div>
                             <div className="location"><b>Location:</b>  {location}</div>
-                            <div classname="will-deliver"><b>Will Deliver?</b> {willDeliver === true? 'Yes' : 'No'}</div>
+                            <div className="will-deliver"><b>Will Deliver?</b> {willDeliver === true? 'Yes' : 'No'}</div>
                             <div className="seller"><b>Seller:</b>  {author.username}</div> 
                 {
                     isAuthor ?< DeletePost token={token} postList={postList} setPosts={setPosts} postId={_id}/> : ''
