@@ -36,6 +36,7 @@ const App =  () => {
       getToken()
     }
   },[token])
+
   
   return <>
     <Navbar token={token} setToken={setToken} messages={messages} setMessages={setMessages} user={user}  setUser={setUser} />
@@ -65,7 +66,7 @@ const App =  () => {
      </Route>
   </>
 }
-//you need a logout button!!!
+
 ReactDOM.render(
   <Router>
     <App />

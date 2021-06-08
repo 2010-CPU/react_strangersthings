@@ -1,22 +1,19 @@
 .message-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 80%;
 }
 .message-form-input {
-    /* margin: 10px; */
-    /* margin: auto; */
-    text-align: center;
-    /* word-wrap: break-word; */
-    border-radius: 10px;
-    /* padding: 10px 3px 10px 3px; */
-    /* width: 10rem; */
+    padding-left: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 70%;
 }
 
 .btn-message {
+  justify-items: center;
   border-radius: 10px;
   padding: 3px 15px  3px 15px;
+  margin: auto;
 }
 .btn-message:hover {
   background-image: linear-gradient(to left, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
