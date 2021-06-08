@@ -12,20 +12,22 @@
 #link-title {
     align-self: center;
     padding: 1rem;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: 'Limelight', cursive;
 }
 
 .link-container {
     display: flex;
     justify-content: flex-end;
-    border-bottom: 3px solid gray;
+    border-bottom: 3px solid slateblue;
 }
 .links {
     padding: 1rem;
     justify-content: space-between;
     align-items: center;
     font-family: 'Limelight', cursive;
+    font-size: 25px;
+    color: white;
 
 }
 .logged-in {

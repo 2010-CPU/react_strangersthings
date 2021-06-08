@@ -27,60 +27,26 @@ const MessageList = ({token, messages, setMessages, user, setUser}) => {
             <h2 className="messages-to-from">Messages to Me</h2>
             {messages.map((message, idx)  => {           
            return message.fromUser.username !== user ? 
-                <div className="messages-container" key={idx}>
-                    <div className="messages">
+                    <div className="messages" key={idx}>
                         <p id="inbox-title">Re: {message.post.title}</p>
                         <p>Message: {message.content}</p>
                         <p>From: {message.fromUser.username}</p>
                     </div>
-                </div>  
                 : ''
            })}
-            <h2>Messages From Me</h2>
+            <h2 className="messages-to-from">Messages From Me</h2>
             {messages.map((message, idx) => {
                 return  message.fromUser.username == user ? 
-                <div className="messagescontainer" key={idx}>
-                <div className="messages">
+                <div className="messages" key={idx}>
                 <p id="inbox-title">Re: {message.post.title}</p>
                 <p>Message: {message.content}</p>
                 <p>From: {message.fromUser.username}</p>
                 </div>
-            </div>
             : ''
             })}    
         </div>)
 }
 
-    // return <>
-    //         <div className="message-box">  
-    //         <h2>Messages To Me</h2>
-    //     {
-    //         messages.map((message, idx)  => {           
-    //        if (message.fromUser.username !== user ){
-    //             return <div className="messages-inbox-container" key={idx}>
-    //                 <div className="messages-in">
-    //             <h3>Message Inbox</h3>
-    //             <p>Re: {message.post.title}</p>
-    //             <p>Message:{message.content}</p>
-    //             <p>From:{message.fromUser.username}</p>
-    //             </div>
-    //         </div>  
-    //        }
-    //         else {
-    //             return <div className="messages-outbox-container" key={idx}>
-    //             <div className="messages-out">
-    //             <h3>Message Outbox</h3>
-    //             <p>Re: {message.post.title}</p>
-    //             <p>Message:{message.content}</p>
-    //             <p>From:{message.fromUser.username}</p>
-    //             </div>
-    //         </div>
-    //         }      
-    //     })
-    //     }
-    // </div>
-    // </> 
-// }
 
 export default MessageList;
 

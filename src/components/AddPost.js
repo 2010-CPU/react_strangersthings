@@ -43,7 +43,7 @@ const AddPost = ({token}) => {
     };
     return <>
         <div className="add-post-container">
-            <h3>Create your new post!</h3>
+            <h3 className="add-post-title">Create your new post!</h3>
         <form onSubmit={handleSubmit} className="add-post-form">
             <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}placeholder="title"></input>
             <textarea type="text" className="description" value={description} onChange={(e) => setDescription(e.target.value)}placeholder="description"></textarea>
