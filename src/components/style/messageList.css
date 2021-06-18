@@ -1,34 +1,19 @@
-.message-list {
-    display: inline-grid;
-    grid-template-columns: repeat(auto-fit(200px, 300px));
-    grid-gap: 20px;
-    justify-content: center;
-    align-content: center;
-    margin: 20px;
-    vertical-align: center;
-  }
-
-.messages{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    grid-auto-flow: center;
-    justify-items: center;
-    height: 400px;
-    width: 20rem;
-    font-size: 25px;
-    border: 1px solid #ccc;
-    overflow: auto;
-    border-radius: 7px;
-    background-color: white; 
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
+.message-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    grid-gap: 10px;
 }
-#inbox-title {
-    font-weight: bold;
-    font-size: 20px;
-    border-bottom: 2px solid black;
+.messages {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px hsl(229, 6%, 66%);
+    padding: 30px;
+    margin: 20px; 
 }
 .messages-to-from {
-   margin: auto;
+    text-align: center;
+}
+#inbox-title {
+    border-bottom: 2px solid aqua;
+    font-size: 20px;
 }

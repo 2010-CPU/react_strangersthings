@@ -1,5 +1,4 @@
 .add-post-container {
-    /* border: 1px solid black; */
     height: 80vh;
     width: 40vw;
     min-width: 150px;
@@ -7,7 +6,6 @@
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     border-radius: 5px;
     background-color: white;

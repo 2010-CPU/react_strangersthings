@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import './styles.css'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './styles.css';
 
 import {
   Signin,
@@ -40,9 +40,9 @@ const App =  () => {
   
   return <>
     <Navbar token={token} setToken={setToken} messages={messages} setMessages={setMessages} user={user}  setUser={setUser} />
-   
+    
     <Route exact path="/">
-      <GetPosts setPosts={setPosts} posts={posts} token={token} setToken={setToken}/>
+    <GetPosts setPosts={setPosts} posts={posts} token={token} setToken={setToken}/>
     </Route>
 
     <Route path="/register">

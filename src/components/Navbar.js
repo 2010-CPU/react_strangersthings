@@ -14,7 +14,6 @@ const Navbar = ({token, setToken, user, setUser}) => {
         <nav className="nav-bar">
         <div id="link-title">Strangers Things</div>
         {user.username && <div className="logged-in">Hello {user.username.toUpperCase()}</div> }
-
         <div className="link-container">
         <Link to="users/me" className="links">{token ? 'User Profile' : ''}</Link> 
         <Link to="/messages" className="links">{token ? 'Messages' : ''}</Link>
@@ -26,9 +25,6 @@ const Navbar = ({token, setToken, user, setUser}) => {
                 setUser({})
             }
         }}className="links">{token ? 'Log out' : 'Sign in'}</Link>}
-
-        
-         {/* <Link to="/login" className="links" >{token ? 'Logout' : 'Sign in'}  </Link>  */}
          <Link path to="/" className="links">Home</Link>
         </div>
     </nav>
